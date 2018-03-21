@@ -1,4 +1,5 @@
-package com.example.a911.coordsgps2;
+﻿package com.example.a911.coordsgps2;
+
 import java.io.*;
 import java.net.*;
 
@@ -9,7 +10,7 @@ public class Sender extends Thread{
         try
         {
             // получаем сокет сервера
-            Socket s = new Socket("localhost", 25000);
+            Socket s = new Socket("127.0.0.1", 25000);
             InputStream instream;
             OutputStream outstream;
             instream = s.getInputStream();
