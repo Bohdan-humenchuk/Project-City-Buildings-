@@ -5,27 +5,29 @@ import java.net.*;
 
 
 public class Sender extends Thread{
-    public static void main(String args[])
+    public static void sendData(Double longtit, Double latit, Double ang)
     {
         try
         {
-            // получаем сокет сервера
-            Socket s = new Socket("127.0.0.1", 25000);
+            Socket s = new Socket("127.0.0.1", 25970);
             InputStream instream;
             OutputStream outstream;
             instream = s.getInputStream();
             outstream = s.getOutputStream();
 
-            // читаем ответ
+            String longtitude = Double.toString(longtit)
+            String latitude = Double.toString(latit)
+            String angle = Double.toString(ang)
+            s.getOutputStream().write(longtitude.getBytes());
+            s.getOutputStream().write(latitude.getBytes());
+            s.getOutputStream().write(angle.getBytes());
+
+   
             byte buf[] = new byte[2048];
             String r = instream.read(buf);
-            System.out.println(r)
-            outstream.write(buf);
-
-            // выводим ответ в консоль
-            System.out.println(data);
+            System.out.println(r);
         }
         catch(Exception e)
-        {System.out.println("init error: "+e);} // вывод исключений
+        {System.out.println("init error: "+e);}
     }
 }
