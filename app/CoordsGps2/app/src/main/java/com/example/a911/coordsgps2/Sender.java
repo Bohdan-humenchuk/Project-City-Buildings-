@@ -5,7 +5,7 @@ import java.net.*;
 
 
 public class Sender extends Thread{
-    public static void sendData(Double longtit, Double latit, Double ang)
+    public static String sendData(Double longtit, Double latit, Double ang)
     {
         try
         {
@@ -25,14 +25,15 @@ public class Sender extends Thread{
             s.getOutputStream().write(latitude.getBytes());
             String message=s.getInputStream().read(buf);
             s.getOutputStream().write(angle.getBytes());
-            String message=s.getInputStream().read(buf);
-   
-            byte buf[] = new byte[64*1024];
-            String r = instream.read(buf);
+            
 
+            String final information = s.getInputStream().read(buf);
+	    
+            
+            
         }
         catch(Exception e)
-        {System.out.println("init error: "+e);}
-        return r;
+        {return e;}
+        return information;
     }
 }
