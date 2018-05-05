@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">See Sign</string>
+    <string name="north">North</string>
+    <string name="south">south</string>
+    <string name="west">West</string>
+    <string name="east">East</string>
+    <string name="steps">find out</string>
+    <string name="perform">perform finding</string>
+</resources>

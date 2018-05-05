@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CoordsGps2</string>
+    <string name="coordinates">Coordinates:</string>
+    <string name="button">request location</string>
+</resources>

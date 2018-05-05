@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:backgroundTint="@color/SkyBlue"
+    android:visibility="visible"
+    tools:context="com.example.a911.sity_sign30.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="top">
+
+        <ImageView
+            android:id="@+id/building_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:paddingBottom="250dp"
+            app:srcCompat="@drawable/clouded_lviv" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/building_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="please, enable GPS before start finding"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/DarkGray"
+                        android:textStyle="normal|italic"
+                        android:typeface="normal"></TextView>
+
+                    <TextView
+                        android:id="@+id/nanvigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="24sp"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_new"
+                    android:elevation="2dp"
+                    android:text="@string/steps"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
