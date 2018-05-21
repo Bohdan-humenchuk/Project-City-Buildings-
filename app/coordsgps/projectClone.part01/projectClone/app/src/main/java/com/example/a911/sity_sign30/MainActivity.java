@@ -151,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
         building_tv = (TextView) findViewById(R.id.building_tv);
         buildingImg = (ImageView) findViewById(R.id.building_img);
 
-            //for GPS   //дослідження залежності кількості нулів після коми від величини дільника
             //for GPS   //Ð´Ð¾Ñ�Ð»Ñ–Ð´Ð¶ÐµÐ½Ð½Ñ� Ð·Ð°Ð»ÐµÐ¶Ð½Ð¾Ñ�Ñ‚Ñ– ÐºÑ–Ð»ÑŒÐºÐ¾Ñ�Ñ‚Ñ– Ð½ÑƒÐ»Ñ–Ð² Ð¿Ñ–Ñ�Ð»Ñ� ÐºÐ¾Ð¼Ð¸ Ð²Ñ–Ð´ Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ð½Ð¸ Ð´Ñ–Ð»ÑŒÐ½Ð¸ÐºÐ°
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
@@ -165,9 +164,14 @@ public class MainActivity extends AppCompatActivity {
 
                 NAVIGATION = "\nLatitude: " + getLatitude()+ "\nLongitude: "+ getLongitude();
                 navigation.setText(NAVIGATION);
+                
+                //    SENDING DATA TO SERVER AND GETTING RESPONDE:
+                //
+                //infoAboutBuilding = Sender.send(getLongtitude, getLatitude, //angleVariable//)
+                //
+                //    ATTENTION ATTENTION ATTENTION
 
-
-
+                
                 /*
                 // precise stuff
                 if (Pcounter > 0)
@@ -433,25 +437,21 @@ public class MainActivity extends AppCompatActivity {
         switch (index)
         {
             case 0:
-                returnStr = "103 Будинок";
                 returnStr = "103 Ð‘ÑƒÐ´Ð¸Ð½Ð¾Ðº";
                 break;
             case 1:
-                returnStr = "Будинок за зеленою лавкою";
+                returnStr = "Ð‘ÑƒÐ´Ð¸Ð½Ð¾Ðº Ð·Ð° Ð·ÐµÐ»ÐµÐ½Ð¾ÑŽ Ð»Ð°Ð²ÐºÐ¾ÑŽ";
                 break;
             case 2:
                 returnStr = "coffee mate danger zone";
                 break;
             case 3:
-                returnStr = "95 будинок";
                 returnStr = "95 Ð±ÑƒÐ´Ð¸Ð½Ð¾Ðº";
                 break;
             case 4:
-                returnStr = "Вопак";
                 returnStr = "Ð’Ð¾Ð¿Ð°Ðº";
                 break;
             default:
-                returnStr = "Будинок відсутній в базі даних";
                 returnStr = "Ð‘ÑƒÐ´Ð¸Ð½Ð¾Ðº Ð²Ñ–Ð´Ñ�ÑƒÑ‚Ð½Ñ–Ð¹ Ð² Ð±Ð°Ð·Ñ– Ð´Ð°Ð½Ð¸Ñ…";
                 break;
         }
