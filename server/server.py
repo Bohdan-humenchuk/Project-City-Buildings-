@@ -1,6 +1,6 @@
 ﻿from socket import *
 
-host = '192.168.0.103'
+host = 'localhost'
 port = 25970
 addr = (host, port)
 ##hostask=input("hostname or IP: ")
@@ -33,21 +33,24 @@ while True:
     conn, addr = tcp_socket.accept()
     print('client addres: ', addr)
 
-    # recv - получает сообщение TCP
-    longtitude = float(bytes.decode(conn.recv(1024)))
-    conn.send(str.encode("got longtitude"))
-    latitude = float(bytes.decode(conn.recv(1024)))
-    conn.send(str.encode("got latitude"))
-    angle = float(bytes.decode(conn.recv(1024)))
-    conn.send(str.encode("got angle"))
-    
-    print(longtitude)
-    print(latitude)
-    print(angle)
+    mess = bytes.decode(conn.recv(1024))
+    print(mess)
+##    # recv - получает сообщение TCP
+##    longtitude = float(bytes.decode(conn.recv(1024)))
+##    conn.send(str.encode("got longtitude"))
+##    latitude = float(bytes.decode(conn.recv(1024)))
+##    conn.send(str.encode("got latitude"))
+##    angle = float(bytes.decode(conn.recv(1024)))
+##    conn.send(str.encode("got angle"))
+##    
+##    print(longtitude)
+##    print(latitude)
+##    print(angle)
 
 ##    conn.send(b'thanks for data, wait while server work over data and searching information')
     
-    conn.send(str.encode(getInfo(getTheBuildingID(longtitude, latitude, angle))))
+##    conn.send(str.encode(getInfo(getTheBuildingID(longtitude, latitude, angle))))
+    conn.send(str.encode("Darova sychki cho kak?"))
 
     conn.close()
 
